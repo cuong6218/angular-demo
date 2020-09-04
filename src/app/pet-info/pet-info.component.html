@@ -1,0 +1,12 @@
+<h1 [style.color]="color1">Pet profile</h1>
+<div class="row">
+<div class="col-md-2">
+    <p>Type your pet name: <input class="form-control" type="text" ng-change="updateName()" [(ngModel)]="petName"></p>
+</div>
+<div class="col-md-9">
+    <p>Type your pet image: <input class="form-control" type="text" ng-change="updateImage()" [(ngModel)]="petImage"></p>
+</div>
+</div>
+<p style="font-size: 20px;" [style.color]="color1"><strong>Pet name:</strong> {{petName}}</p>
+<img [src]="petImage" alt="No image" style="width: 600px; height: 400px;">
+<a class="btn btn-danger" routerLink="">Back</a>

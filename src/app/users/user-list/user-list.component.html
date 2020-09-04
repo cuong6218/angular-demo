@@ -1,0 +1,47 @@
+<!-- <a routerLink="../add-user/add-user.component.ts" routerLinkActive="active">Add user</a> -->
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<div class="row">
+<div class="col s6">
+<input type="number" [(ngModel)]="newId" placeholder="id">
+<input type="text" [(ngModel)]="newName" placeholder="name">
+<input type="text" [(ngModel)]="newAddress" placeholder="address">
+<input type="text" [(ngModel)]="newEmail" placeholder="email">
+<button type="button" class="btn btn-success" (click)="addUser()">Add User</button>
+</div>
+
+<div class="col s6">
+  <input type="number" [(ngModel)]="updateId" placeholder="id" class="input-field col s12" disabled>
+  <input type="text" [(ngModel)]="updateName" placeholder="name">
+  <input type="text" [(ngModel)]="updateAddress" placeholder="address">
+  <input type="text" [(ngModel)]="updateEmail" placeholder="email">
+  <button type="button" class="btn btn-primary" (click)="update(updateId)">Update User</button>
+  </div>
+</div>
+<h1>User List</h1>
+<input type="search" (keyup)="search($event)" class="form-control col-md-3 mb-3" placeholder="type your keyword">
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Address</th>
+      <th scope="col" [hidden]="hidden">Email</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of usersFilted; let i = index">
+      <th scope="row">{{i+1}}</th>
+      <td>{{user.name}}</td>
+      <td>{{user.address}}</td>
+      <td [hidden]="hidden">{{user.email}}</td>
+      <td><button type="button" class="btn btn-primary" (click)="edit(user.id)" >Update</button></td>
+      <td><button type="button" class="btn btn-danger" (click)="deleteUser(user.id)">Delete</button></td>
+    </tr>
+  </tbody>
+</table>
+<button type="button" class="btn btn-info" (click)="showHide()">Show/Hide Email</button>
+<a class="btn btn-danger" routerLink="">Back</a>

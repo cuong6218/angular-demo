@@ -1,0 +1,26 @@
+<h1 [style.color]="color1">Calculator </h1>
+
+<div class="row">
+    <div class="col-md-2">
+        <p [style.color]="color2">Number 1: <input class="form-control" (keyup)="calculate()" type="number" placeholder="Number one" [(ngModel)]="number1" ></p>
+    </div>
+    <div class="col-md-2">
+        <p [style.color]="color2">Calculate:
+    <select class="form-control " [(ngModel)]="selectOption" (change)="calculate()">
+      <option value="plus">plus</option>
+      <option value="sub">sub</option>
+      <option value="multi">multi</option>
+      <option value="div">div</option>
+    </select>
+        </p>
+    </div>
+    <div class="col-md-2">
+<p [style.color]="color2">Number 2: <input class="form-control " (keyup)="calculate()" type="number" placeholder="Number two" [(ngModel)]="number2"></p>
+</div>
+<!-- <button type="button" class="btn btn-secondary" (click)="calculate()">Calc</button> -->
+<div class="col-md-2">
+<p [style.color]="color2">Result: <input type="number" class="form-control" [value]="result" disabled></p>
+
+</div>
+</div>
+<a class="btn btn-danger" routerLink="">Back</a>

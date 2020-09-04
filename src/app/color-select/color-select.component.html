@@ -1,0 +1,22 @@
+<h1 [style.color]="color1">Color Picker 1:
+  <div class="col-md-3">
+  <select class="form-control" [(ngModel)]="color1" (change)="newColor1(color1)">
+    <option style="height: 20px;" *ngFor="let color of colors" [style.color]="color">{{color}}</option>
+  </select>
+</div>
+</h1>
+<h1 [style.color]="color2">Color picker 2:
+<div class="col-md-3">
+  <input type="color"[(ngModel)]="color2" (change)="newColor2(color2)">
+</div>
+</h1>
+<div class="row">
+  <div class="col-md-3">
+    <p [style.background-color]="color1">{{color1}}</p>
+  </div>
+  <div class="col-md-3">
+    <p [style.background-color]="color2">Example Color 2</p>
+  </div>
+  <!-- <button type="button" class="btn btn-danger" (click)="newColor()">Change color to orange</button> -->
+</div>
+<a class="btn btn-danger" routerLink="">Back</a>

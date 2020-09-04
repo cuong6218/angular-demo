@@ -1,0 +1,10 @@
+
+<h1 [style.color]="color1">Font change</h1>
+<!-- <img [src]="imgUrl" alt="No image"><br/>
+<button type="button" (click)="countUp()">Click me</button>
+<p>Clicked {{count}} times</p> -->
+<input type="number" class="form-control mb-3" ng-change="changeFont()" [(ngModel)]="fontSize">
+<!-- <button type="button" (click)="fontUp()">Font up</button> -->
+<!-- <p>Count change:{{fontSize}}</p> -->
+<p [style.fontSize.px]="fontSize" class="text-danger">This is paragraph</p>
+<a class="btn btn-danger" routerLink="">Back</a>
