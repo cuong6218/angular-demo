@@ -7,7 +7,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from "./home/home.component";
 import { ColorSelectComponent } from './color-select/color-select.component';
 const routes: Routes = [
-  { path: '', component: HomeComponent},
+  // { path: '', component: HomeComponent},
   { path: 'users', component: UserListComponent},
   { path: 'calculator', component: CalculatorComponent },
   { path: 'font-change', component: FontChangeComponent },

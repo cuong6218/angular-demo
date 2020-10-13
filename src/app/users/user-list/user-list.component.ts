@@ -75,8 +75,11 @@ export class UserListComponent implements OnInit {
   }
   deleteUser(id)
   {
-    let index = this.users.findIndex(usersFilted => usersFilted.id == id);
+    if(confirm('Are you sure?'))
+    {
+      let index = this.users.findIndex(usersFilted => usersFilted.id == id);
     this.users.splice(index, 1);
+    }
   }
   addUser()
   {
